@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
     //Stateful Variables
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    //Hooks
+    const navigateTo = useNavigate();
 
     //Functions
     async function loginUser(e) {
@@ -25,7 +28,7 @@ function Login() {
 
         if (data.user) {
             localStorage.setItem("token", data.user);
-            window.location.href = "/userworkouts";
+            navigateTo("/userworkouts");
         } else {
             alert("Invalid Username or Password.");
         }
