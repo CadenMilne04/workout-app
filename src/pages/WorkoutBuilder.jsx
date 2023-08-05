@@ -100,7 +100,7 @@ function WorkoutBuilder() {
                 <div>
                     <Link
                         className="btn btn-primary mx-2 my-0"
-                        to={"/userworkouts"}
+                        to={"/workoutrecorder"}
                     >
                         User Workouts
                     </Link>

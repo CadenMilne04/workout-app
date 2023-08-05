@@ -28,7 +28,7 @@ function Login() {
 
         if (data.user) {
             localStorage.setItem("token", data.user);
-            navigateTo("/userworkouts");
+            navigateTo("/workoutrecorder");
         } else {
             alert("Invalid Username or Password.");
         }

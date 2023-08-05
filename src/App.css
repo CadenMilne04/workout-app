@@ -1,0 +1,18 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
