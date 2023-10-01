@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Topbar from "../components/Topbar";
+import BottomNav from "../components/BottomNav";
 
 function WorkoutBuilder() {
     const [name, setName] = useState("");
@@ -28,10 +29,10 @@ function WorkoutBuilder() {
 
         const data = await req.json();
         if (data.status === "ok") {
-            if (data.name === "admin") {
+            if (data.name === "admin" || data.name === "Caden") {
                 setName(data.name);
             } else {
-                navigateTo("/userworkouts");
+                navigateTo("/workoutrecorder");
             }
         } else {
             alert(data.error);
@@ -94,26 +95,10 @@ function WorkoutBuilder() {
     }, []);
     return (
         <div className="container">
-            <div className="container d-flex align-items-center justify-content-between my-3">
-                <h2 className="m-0">Welcome {name}!</h2>
-                <h2 className="m-0">{date}</h2>
-                <div>
-                    <Link
-                        className="btn btn-primary mx-2 my-0"
-                        to={"/workoutrecorder"}
-                    >
-                        User Workouts
-                    </Link>
-
-                    <button
-                        className="btn btn-danger m-0"
-                        onClick={handleLogout}
-                    >
-                        Log Out
-                    </button>
-                </div>
-            </div>
+            <Topbar name = {name} date = {date} />
+            <BottomNav />
             <hr />
+            
             <h1>Build a New Workout 🔨</h1>
             <form onSubmit={addExcersize}>
                 <div className="container d-flex flex-column">

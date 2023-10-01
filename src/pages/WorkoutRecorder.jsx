@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Topbar from "../components/Topbar";
 import ExcersizeList from "../components/ExcersizeList";
+import BottomNav from "../components/BottomNav";
 
 function WorkoutRecorder() {
     //Stateful Variables
@@ -144,11 +145,8 @@ function WorkoutRecorder() {
             <Topbar
                 name={name}
                 date={date}
-                btnText={"Workout Builder"}
-                btnTo={"workoutbuilder"}
-                btn2Text={"Saved Workouts"}
-                btn2To={"savedworkouts"}
             />
+            <BottomNav />
             <hr />
 
             {workouts ? (

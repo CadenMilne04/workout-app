@@ -3,6 +3,7 @@ import Topbar from "../components/Topbar";
 import WorkoutBuilder from "./WorkoutBuilder";
 import jwt_decode from "jwt-decode";
 import SavedWorkoutItem from "../components/SavedWorkoutItem";
+import BottomNav from "../components/BottomNav";
 
 function SavedWorkouts() {
     const [date, setDate] = useState("");
@@ -75,6 +76,9 @@ function SavedWorkouts() {
                 btn2Text={"New Workout"}
                 btn2To={"workoutrecorder"}
             />
+
+            <BottomNav />
+
             <hr />
             <div className="container">
                 <h2>Saved Workouts 💾</h2>

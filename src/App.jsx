@@ -6,6 +6,7 @@ import WorkoutBuilder from "./pages/WorkoutBuilder";
 import SavedWorkouts from "./pages/SavedWorkouts";
 import WorkoutRecorder from "./pages/WorkoutRecorder";
 import "./App.css"
+import HomePage from "./pages/HomePage";
 
 
 function App() {
@@ -30,6 +31,11 @@ function App() {
                         path="/workoutrecorder"
                         exact
                         element={<WorkoutRecorder />}
+                    />
+                    <Route
+                        path="/homepage"
+                        exact
+                        element={<HomePage />}
                     />
                 </Routes>
             </BrowserRouter>
